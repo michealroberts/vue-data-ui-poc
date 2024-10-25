@@ -40,22 +40,40 @@ const config = computed((): UIXYConfig => {
         lineDasharray: 2,
         lineWidth: 1
       },
-      highlightArea: {
-        show: false,
-        from: 0,
-        to: 0,
-        color: '#1A1A1A',
-        opacity: 20,
-        caption: {
-          text: 'Caption',
-          fontSize: 20,
-          color: '#1A1A1A',
-          bold: false,
-          offsetY: 0,
-          width: 'auto',
-          textAlign: 'center'
+      highlightArea: [
+        {
+          show: true,
+          from: 2,
+          to: 6,
+          color: '#FF0000',
+          opacity: 10,
+          caption: {
+            text: 'Caption 1',
+            fontSize: 12,
+            color: '#FFFFFF',
+            bold: false,
+            offsetY: 12, // In case of area overlap, could be programatically adapted to avoid labels overlapping
+            width: 'auto',
+            textAlign: 'center'
+          }
+        },
+        {
+          show: true,
+          from: 20,
+          to: 25,
+          color: '#00FF00',
+          opacity: 10,
+          caption: {
+            text: 'Caption 2',
+            fontSize: 12,
+            color: '#FFFFFF',
+            bold: false,
+            offsetY: 12,
+            width: 'auto',
+            textAlign: 'center'
+          }
         }
-      },
+      ],
       timeTag: {
         show: false,
         backgroundColor: '#e1e5e8',
@@ -70,6 +88,13 @@ const config = computed((): UIXYConfig => {
         stroke: '#64748b',
         showVerticalLines: false,
         showHorizontalLines: false,
+        position: 'start',
+        frame: {
+          show: true,
+          stroke: '#E1E5E8',
+          strokeWidth: 4, // type error was corrected in v2.3.41 but perhaps still shows here for some reason,
+          strokeLinecap: 'round'
+        },
         labels: {
           show: true,
           color: '#64748b',
