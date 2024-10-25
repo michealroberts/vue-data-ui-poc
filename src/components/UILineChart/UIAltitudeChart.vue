@@ -118,7 +118,9 @@ const config = computed((): UIXYConfig => {
             useIndividualScale: false,
             stacked: false,
             gap: 10,
-            labelWidth: 40
+            labelWidth: 40,
+            scaleMin: -90,
+            scaleMax: 90
           },
           xAxisLabels: {
             color: '#1A1A1A',
